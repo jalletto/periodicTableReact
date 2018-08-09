@@ -1,0 +1,18 @@
+.orbit {
+    border: solid white 1px;
+    border-radius: 50%;
+    position: absolute;
+    /* -webkit-border-radius: 50%;
+     -webkit-animation: spin-right 20s linear infinite;
+    animation: spin-right 20s linear infinite; */
+}
+
+/* @-webkit-keyframes spin-right {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+} */

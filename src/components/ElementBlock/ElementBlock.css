@@ -17,34 +17,3 @@
     left:0;
 }
 
-.electrons {
-    border: solid white .05px;
-    width: 60px; 
-    height: 60px;
-    border-radius: 50%;
-    position: absolute;
-    top: 25px;
-    left:20px;
-     -webkit-animation: spin-right 20s linear infinite;
-    animation: spin-right 20s linear infinite;
-}
-
-.electron {
-    background-color: white;
-    position: absolute;
-    border-radius: 100%;
-    width: 8px; 
-    height: 8px;
-    top: 1px;
-    left: 10px;
-}
-
-@-webkit-keyframes spin-right {
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}

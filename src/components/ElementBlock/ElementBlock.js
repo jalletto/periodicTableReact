@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './ElementBlock.css';
-
-class ElementBlcok extends Component {
+import ElectronOrbits from '../ElectronOrbits/ElectronOrbits'
+class ElementBlock extends Component {
 
     constructor(props){
         super(props)
@@ -19,14 +19,10 @@ class ElementBlcok extends Component {
             <div className="element-block" style={postion}>
                 <h4 className="number">{ this.state.attributes.number }</h4>
                 <p className="symbol">{this.state.attributes.symbol}</p>
-                <div className="electrons">
-                    <div className="inner-orbit">
-                        <div className="electron"></div>
-                    </div>
-                </div>
+                <ElectronOrbits shells={this.state.attributes.shells} /> 
             </div>
         );
     }
 }
 
-export default ElementBlcok;
+export default ElementBlock;
