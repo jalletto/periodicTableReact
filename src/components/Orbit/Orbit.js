@@ -8,11 +8,12 @@ class Orbit extends Component {
         const styles ={
             width: this.props.diameter, 
             height: this.props.diameter, 
-            top: this.props.top, 
-            left: this.props.left
         }
+        const innerOrbit = this.props.innerOrbits > 0 ? <Orbit innerOrbits={this.props.innerOrbits - 1 }/> : ""
+        
         return (
             <div className="orbit" style={styles} >
+                {innerOrbit}
                <Electron top={ this.props.diameter / 2 } /> 
             </div>
         );
