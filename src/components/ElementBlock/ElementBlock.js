@@ -6,8 +6,22 @@ class ElementBlock extends Component {
     constructor(props){
         super(props)
         this.state = {
+            showRings: false, 
             attributes: this.props.attributes
         }
+    }
+
+    _handleClick(e) {
+        let newState
+        if(this.state.showRings) {
+            newState = false
+        } else {
+            newState = true 
+        }
+
+        this.setState({
+            showRings: newState
+        })
     }
 
     render() {
@@ -16,10 +30,10 @@ class ElementBlock extends Component {
             gridColumn: this.state.attributes.xpos
         }
         return (
-            <div className="element-block" style={postion}>
+            <div onClick={ e => this._handleClick(e) } className="element-block" style={postion}>
                 <h4 className="number">{ this.state.attributes.number }</h4>
                 <p className="symbol">{this.state.attributes.symbol}</p>
-                <ElectronOrbits shells={this.state.attributes.shells} /> 
+                {this.state.showRings ? <ElectronOrbits shells={this.state.attributes.shells} /> : null }
             </div>
         );
     }
