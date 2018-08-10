@@ -5,16 +5,13 @@ import Electron from '../Electron/Electron'
 class Orbit extends Component {
 
     render() {
-        const styles ={
-            width: this.props.diameter, 
-            height: this.props.diameter, 
-        }
-        const innerOrbit = this.props.innerOrbits - 1 > 0 ? <Orbit innerOrbits={ this.props.innerOrbits - 1 }/> : ""
+
+        const innerOrbit = this.props.innerOrbits - 1 > 0 ? <Orbit innerOrbits={ this.props.innerOrbits - 1 }/> : null
         
         return (
-            <div className="orbit" style={styles} >
-                {innerOrbit}
-               <Electron top={ this.props.diameter / 2 } /> 
+            <div className="orbit"  >
+                { innerOrbit }
+               {/* <Electron top={ 8 } />  */}
             </div>
         );
     }

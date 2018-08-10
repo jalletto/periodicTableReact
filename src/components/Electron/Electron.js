@@ -6,7 +6,7 @@ class Electron extends Component {
     render() {
 
         return (
-            <div className="electron" style={{top: this.props.top}} >
+            <div className="electron" style={ {top: this.props.top} } >
             </div>
         );
     }

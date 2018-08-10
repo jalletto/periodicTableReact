@@ -11,16 +11,9 @@ class ElementBlock extends Component {
         }
     }
 
-    _handleClick(e) {
-        let newState
-        if(this.state.showRings) {
-            newState = false
-        } else {
-            newState = true 
-        }
-
+    _handleClick(previousState) {
         this.setState({
-            showRings: newState
+            showRings: !previousState
         })
     }
 
@@ -30,10 +23,10 @@ class ElementBlock extends Component {
             gridColumn: this.state.attributes.xpos
         }
         return (
-            <div onClick={ e => this._handleClick(e) } className="element-block" style={postion}>
+            <div onClick={ () => this._handleClick(this.state.showRings) } className="element-block" style={ postion }>
                 <h4 className="number">{ this.state.attributes.number }</h4>
                 <p className="symbol">{this.state.attributes.symbol}</p>
-                {this.state.showRings ? <ElectronOrbits shells={this.state.attributes.shells} /> : null }
+                { this.state.showRings ? <ElectronOrbits shells={ this.state.attributes.shells } /> : null }
             </div>
         );
     }

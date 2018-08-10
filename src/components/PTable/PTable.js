@@ -11,7 +11,7 @@ class PTable extends Component {
         })
         return (
             <div id="table">
-                {blocks}
+                { blocks }
             </div>
         );
     }
