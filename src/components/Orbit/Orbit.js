@@ -3,15 +3,31 @@ import './Orbit.css'
 import Electron from '../Electron/Electron'
 
 class Orbit extends Component {
+    constructor(props){
+        super(props)
+        this.state ={
+            numberOfelectrons: this.props.shells.shift(), 
+            innerShells: this.props.shells 
+        }
+    }
+
+    createElectrons(){
+        let electrons = []
+        for(let i = 1; i <= this.state.numberOfelectrons; i++){
+
+            electrons.push(<Electron key={ i } top = { 360 / (i * 5) } left={ i } /> )
+        }
+        return electrons
+    }
 
     render() {
 
-        const innerOrbit = this.props.innerOrbits - 1 > 0 ? <Orbit innerOrbits={ this.props.innerOrbits - 1 }/> : null
+        const innerOrbit = this.state.innerShells.length  > 0 ? <Orbit shells={ this.state.innerShells }/> : null
         
         return (
             <div className="orbit"  >
                 { innerOrbit }
-               {/* <Electron top={ 8 } />  */}
+               {this.createElectrons()}
             </div>
         );
     }

@@ -8,7 +8,7 @@ class ElectronOrbits extends Component {
         
         return (
             <div className="electrons-container">
-                <Orbit innerOrbits={ this.props.shells.length }/>
+                <Orbit shells={ this.props.shells }/>
             </div>
         );
     }

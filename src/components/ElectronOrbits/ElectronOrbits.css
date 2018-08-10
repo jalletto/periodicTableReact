@@ -5,6 +5,7 @@
   width: 250px;
   height: 250px; 
   position: fixed; 
+  padding: 1%;
   top: 100px;
   left: 40%
 }
