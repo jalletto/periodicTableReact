@@ -1,8 +1,9 @@
 .electron {
     background-color: white;
+    border: solid blueviolet; 
     position: absolute;
     border-radius: 50%;
-    width: 5px; 
-    height: 5px;
+    width: 2px; 
+    height: 2px
   
 }

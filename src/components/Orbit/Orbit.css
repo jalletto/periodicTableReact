@@ -8,11 +8,11 @@
   padding: 15px;
   box-sizing: border-box;
   -webkit-border-radius: 50%;
-  -webkit-animation: spin-right 40s linear infinite;
-  animation: spin-right 40s linear infinite;
+  -webkit-animation: spin-right 200s linear infinite;
+  animation: spin-right 200s linear infinite;
 }
 
-/* @-webkit-keyframes spin-right {
+@-webkit-keyframes spin-right {
   100% {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -20,5 +20,5 @@
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-} */
+}
 

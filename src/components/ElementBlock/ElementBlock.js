@@ -26,7 +26,7 @@ class ElementBlock extends Component {
             <div onClick={ () => this._handleClick(this.state.showRings) } className="element-block" style={ postion }>
                 <h4 className="number">{ this.state.attributes.number }</h4>
                 <p className="symbol">{this.state.attributes.symbol}</p>
-                { this.state.showRings ? <ElectronOrbits shells={ this.state.attributes.shells.slice(0) } /> : null }
+                { this.state.showRings ? <ElectronOrbits element={this.state.attributes.name } shells={ this.state.attributes.shells.slice(0) } /> : null }
             </div>
         );
     }
