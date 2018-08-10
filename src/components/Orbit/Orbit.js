@@ -9,12 +9,12 @@ class Orbit extends Component {
             width: this.props.diameter, 
             height: this.props.diameter, 
         }
-        const innerOrbit = this.props.innerOrbits > 0 ? <Orbit innerOrbits={this.props.innerOrbits - 1 }/> : ""
+        const innerOrbit = this.props.innerOrbits - 1 > 0 ? <Orbit innerOrbits={ this.props.innerOrbits - 1 }/> : ""
         
         return (
             <div className="orbit" style={styles} >
                 {innerOrbit}
-               {/* <Electron top={ this.props.diameter / 2 } />  */}
+               <Electron top={ this.props.diameter / 2 } /> 
             </div>
         );
     }

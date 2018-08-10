@@ -1,0 +1,10 @@
+.electrons-container {
+  border-radius: 10%;
+  background-color: black;
+  z-index: 1;
+  width: 200px;
+  height: 200px; 
+  position: fixed; 
+  top: 100px;
+  left: 40%
+}

@@ -7,7 +7,7 @@ class ElectronOrbits extends Component {
     render() {
         
         return (
-            <div className="orbit electrons-container">
+            <div className="electrons-container">
                 <Orbit innerOrbits={ this.props.shells.length }/>
             </div>
         );

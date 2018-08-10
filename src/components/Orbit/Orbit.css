@@ -1,3 +1,4 @@
+
 .orbit {
   height: 100%;
   width: 100%;
@@ -5,7 +6,6 @@
   border-radius: 50%;
   padding: 15px;
   box-sizing: border-box;
-
   -webkit-border-radius: 50%;
   -webkit-animation: spin-right 20s linear infinite;
   animation: spin-right 20s linear infinite;
@@ -21,11 +21,3 @@
   }
 }
 
-.electrons-container {
-
-  z-index: 999;
-  width: 400px;
-  height: 400px;
-  grid-column-start: 5;
-  grid-column-end: 10;
-}
