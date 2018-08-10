@@ -9,8 +9,9 @@ class Orbit extends Component {
         super(props)
         this.state ={
             numberOfelectrons: this.props.shells.shift(), 
-            innerShells: this.props.shells.slice(), 
-            electrons: [] 
+            innerShells: this.props.shells.slice(0), 
+            electrons: [], 
+            orbitRef: this.props.element + this.props.shells.length.toString()
         }
     }
 
@@ -25,30 +26,27 @@ class Orbit extends Component {
     }
     
     createElectrons(){
-        if (ReactDOM.findDOMNode(this.refs[this.props.element + this.state.innerShells.length.toString()])){
-            const location = ReactDOM.findDOMNode(this.refs[this.props.element + this.state.innerShells.length.toString()]).getBoundingClientRect();
-
-            const top_left = location.width / 2 
-            const radius = location.width / 2 
-            let electrons = []
-            for(let i = 0; i < 360; i+= (360 / this.state.numberOfelectrons)){
-                let points = this.getPointOnRadius(top_left, top_left, radius, i)
-                electrons.push(<Electron key={ i } top = { points[0] - 4} left={points[1] - 4} /> )
-            }
-            this.setState({
-                electrons: electrons
-            }) 
+        const thisOrbit = ReactDOM.findDOMNode(this.refs[this.state.orbitRef]).getBoundingClientRect();
+        const radius = thisOrbit.width / 2 
+        let electrons = []
+        for(let i = 0; i < 360; i+= (360 / this.state.numberOfelectrons)){
+            let points = this.getPointOnRadius(radius, radius, radius, i)
+            // subtract four to account for width of border? I don't really know why, this just looks better and places them more directly on the line. 
+            electrons.push(<Electron key={ i } top = { points[0] - 4} left={points[1] - 4} /> )
         }
+        this.setState({
+            electrons: electrons
+        }) 
+
     }
 
     render() {
-
-        const innerOrbit = this.state.innerShells.length  > 0 ? <Orbit element={this.props.element} shells={ this.state.innerShells.slice() }/> : null
+        const innerOrbit = this.state.innerShells.length  > 0 ? <Orbit element={this.props.element} shells={ this.state.innerShells.slice(0) }/> : null
         
         return (
-            <div className="orbit" ref={this.props.element + this.state.innerShells.length.toString()}>
+            <div className="orbit" ref={ this.state.orbitRef }>
                 { innerOrbit }
-               {this.state.electrons}
+               { this.state.electrons }
             </div>
         );
     }
